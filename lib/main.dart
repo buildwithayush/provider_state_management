@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:learn_provider/provider/count_provider.dart';
+import 'package:learn_provider/provider/favorite_provider.dart';
 import 'package:learn_provider/provider/slider_example_provider.dart';
-import 'package:learn_provider/screens/slider_example.dart';
+import 'package:learn_provider/screens/favorite/favorite_screen.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -18,12 +19,13 @@ class MyApp extends StatelessWidget {
       providers: [
         ChangeNotifierProvider(create: (_) => CountProvider()),
         ChangeNotifierProvider(create: (_) => SliderExampleProvider()),
+        ChangeNotifierProvider(create: (_) => FavoriteItemProvider())
       ],
 
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Learning Provider State Management',
-        home: SliderExample(),
+        home: FavoriteScreen(),
       ),
     );
   }
