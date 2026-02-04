@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:learn_provider/provider/favorite_provider.dart';
+import 'package:learn_provider/screens/favorite/favorite_items.dart';
 
 import 'package:provider/provider.dart';
 
@@ -20,6 +21,23 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
         title: Text('Favorite App'),
         centerTitle: true,
         backgroundColor: Colors.amber,
+        actions: [
+          InkWell(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => FavoriteItems(),
+                ),
+              );
+            },
+            child: Icon(
+              Icons.favorite,
+            ),
+            
+          ),
+          SizedBox(width: 25,)
+        ],
       ),
       body: Column(
         children: [
