@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:learn_provider/provider/count_provider.dart';
 import 'package:learn_provider/provider/favorite_provider.dart';
+import 'package:learn_provider/provider/list_provider.dart';
 import 'package:learn_provider/provider/slider_example_provider.dart';
 import 'package:learn_provider/provider/theme_provider.dart';
-import 'package:learn_provider/screens/dark_theme_screen.dart';
+import 'package:learn_provider/screens/list_screen.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -21,6 +22,7 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (_) => SliderExampleProvider()),
         ChangeNotifierProvider(create: (_) => FavoriteItemProvider()),
         ChangeNotifierProvider(create: (_) => ThemeChangeProvider()),
+        ChangeNotifierProvider(create: (_) => ListProvider()),
       ],
 
       child: Builder(
@@ -30,13 +32,13 @@ class MyApp extends StatelessWidget {
             themeMode: themeChanger.themeMode,
             debugShowCheckedModeBanner: false,
             title: 'Learning Provider State Management',
-            home: DarkThemeScreen(),
+            home: ListScreen(),
               
-            darkTheme: ThemeData(
-              brightness: Brightness.dark,
-              primaryColor: Colors.blue,
-              appBarTheme: const AppBarTheme(backgroundColor: Colors.blue),
-            ),
+            // darkTheme: ThemeData(
+            //   brightness: Brightness.dark,
+            //   primaryColor: Colors.black,
+            //   appBarTheme: const AppBarTheme(backgroundColor: Colors.black),
+            // ),
 
             theme: ThemeData(
               primaryColor: Colors.blue,
